@@ -9,16 +9,21 @@ print("2. Subtraction")
 print("3. Multiplication")
 print("4. Division")
 selection = input("Please enter your selection: ")
+# change input into integer
 selection = int(selection)
+# set is_valid to False so when an error happens, the calculator asks for input again
 is_valid = False
+# keep running script until is_valid becomes True
 while not is_valid:
     if (selection == 1):
         x = input("Type first number: ")
         y = input("Type second number: ")
         try: 
+            # change inputs into integers
             x_num = int(x)
             y_num = int(y)
             add.add(x_num, y_num)
+            # change is_valid to True after succeeding to break the loop
             is_valid = True
         except ValueError:
             print("Invalid character entered.")
@@ -54,6 +59,3 @@ while not is_valid:
             print("Invalid character entered.")
     else:
         print("Please make a selection from 1-4")
-
-#  Create a custom exception called CalculatorInputError to be thrown 
-#  if your user inputs any invalid characters. The calculator should ask for the input again if this error is thrown.
